@@ -14,7 +14,7 @@ class CategoryDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: category.color,
-        title: Text('${category.title}'),
+        title: Text(category.title),
       ),
       body: Center(
         child: Text('Category Detail'),
