@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:course_007/category_detail_screen.dart';
-
-import 'categories_screen.dart';
+import 'package:course_007/screens/index.dart';
 
 void main() => runApp(App());
 

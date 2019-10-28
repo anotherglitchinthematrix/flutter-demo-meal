@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:course_007/category_detail_screen.dart';
-
-import 'models/category.model.dart';
+import 'package:course_007/models/index.dart';
+import 'package:course_007/screens/index.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category category;
