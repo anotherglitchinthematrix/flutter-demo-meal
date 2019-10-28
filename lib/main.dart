@@ -10,7 +10,8 @@ class App extends StatelessWidget {
       title: 'Meal App',
       home: CategoriesScreen(),
       routes: {
-        CategoryDetailsScreen.routeName: (context) => CategoryDetailsScreen(),
+        CategoryScreen.routeName: (context) => CategoryScreen(),
+        MealScreen.routeName: (context) => MealScreen(),
       },
     );
   }

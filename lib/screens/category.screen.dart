@@ -1,10 +1,10 @@
-import 'package:course_007/widgets/index.dart';
 import 'package:flutter/material.dart';
+import 'package:course_007/widgets/index.dart';
 import 'package:course_007/models/index.dart';
 import 'package:course_007/dummy_data.dart';
 
-class CategoryDetailsScreen extends StatelessWidget {
-  static const routeName = '/category-detail';
+class CategoryScreen extends StatelessWidget {
+  static const routeName = '/category';
 
   @override
   Widget build(BuildContext context) {

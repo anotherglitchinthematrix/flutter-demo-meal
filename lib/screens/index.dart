@@ -1,2 +1,3 @@
 export 'categories.screen.dart';
-export 'category_detail.screen.dart';
+export 'category.screen.dart';
+export 'meal.screen.dart';
