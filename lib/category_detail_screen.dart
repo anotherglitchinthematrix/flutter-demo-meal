@@ -15,7 +15,12 @@ class CategoryDetailsScreen extends StatelessWidget {
         title: Text(category.title),
       ),
       body: Center(
-        child: Text('Category Detail'),
+        child: ListView.builder(
+          itemCount: 0,
+          itemBuilder: (context, index) {
+            return Text('');
+          },
+        ),
       ),
     );
   }
