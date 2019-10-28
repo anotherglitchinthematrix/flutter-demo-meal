@@ -1,44 +1,58 @@
+import 'package:course_007/category_detail_screen.dart';
 import 'package:flutter/material.dart';
 
-class CategoryItem extends StatelessWidget {
-  final String title;
-  final Color color;
+import 'models/category.model.dart';
 
-  CategoryItem({
-    this.title,
-    this.color,
-  });
+class CategoryItem extends StatelessWidget {
+  final Category category;
+
+  CategoryItem(
+    this.category,
+  );
+
+  void _selectCategory(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return CategoryDetailsScreen(category);
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            // color.withOpacity(0.8),
-            color,
-            darken(color),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+    return InkWell(
+      onTap: () => _selectCategory(context),
+      splashColor: Colors.black,
+      borderRadius: BorderRadius.circular(8),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              category.color.withOpacity(0.8),
+              category.color,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: category.color,
+            width: 2.0,
+          ),
         ),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      padding: const EdgeInsets.all(16),
-      alignment: Alignment.bottomRight,
-      child: Text(
-        title,
-        style: TextStyle(
-          color: Colors.black54,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
+        padding: const EdgeInsets.all(16),
+        alignment: Alignment.bottomRight,
+        child: Text(
+          category.title,
+          style: TextStyle(
+            color: Colors.black.withAlpha(128),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
   }
-}
-
-Color darken(Color color, {int shift = 0x1}) {
-  return Color.fromARGB(color.alpha, color.red >> shift, color.green >> shift,
-      color.blue >> shift);
 }
