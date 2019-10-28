@@ -120,8 +120,8 @@ const List<Meal> DUMMY_MEALS = const [
   Meal(
     id: 'm3',
     categories: [
-      'c2',
       'c3',
+      'c2',
     ],
     title: 'Classic Hamburger',
     affordability: Affordability.Pricey,
@@ -187,8 +187,8 @@ const List<Meal> DUMMY_MEALS = const [
   Meal(
     id: 'm5',
     categories: [
-      'c2'
-          'c5',
+      'c2',
+      'c5',
       'c10',
     ],
     title: 'Salad with Smoked Salmon',
