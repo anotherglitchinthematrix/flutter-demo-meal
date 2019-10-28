@@ -1,4 +1,3 @@
-import 'package:course_007/category_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'models/category.model.dart';
@@ -11,12 +10,9 @@ class CategoryItem extends StatelessWidget {
   );
 
   void _selectCategory(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) {
-          return CategoryDetailsScreen(category);
-        },
-      ),
+    Navigator.of(context).pushNamed(
+      '/category-detail',
+      arguments: category,
     );
   }
 

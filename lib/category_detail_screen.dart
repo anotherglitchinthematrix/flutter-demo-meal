@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import 'models/category.model.dart';
 
 class CategoryDetailsScreen extends StatelessWidget {
-  final Category category;
+  // final Category category;
 
-  CategoryDetailsScreen(
-    this.category,
-  );
+  // CategoryDetailsScreen(
+  //   this.category,
+  // );
 
   @override
   Widget build(BuildContext context) {
+    final category = ModalRoute.of(context).settings.arguments as Category;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: category.color,
