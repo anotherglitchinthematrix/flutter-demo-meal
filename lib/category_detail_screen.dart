@@ -12,7 +12,7 @@ class CategoryDetailsScreen extends StatelessWidget {
     final Category category =
         ModalRoute.of(context).settings.arguments as Category;
 
-    final List<Meal> categoryMeals = DUMMY_MEALS
+    final List<Meal> meals = DUMMY_MEALS
         .where((meal) => meal.categories.contains(category.id))
         .toList();
 
@@ -23,9 +23,9 @@ class CategoryDetailsScreen extends StatelessWidget {
       ),
       body: Center(
         child: ListView.builder(
-          itemCount: categoryMeals.length,
+          itemCount: meals.length,
           itemBuilder: (context, index) {
-            return Text(categoryMeals[index].title);
+            return Text(meals[index].title);
           },
         ),
       ),

@@ -7,52 +7,52 @@ const List<Category> DUMMY_CATEGORIES = const [
   Category(
     id: 'c1',
     title: 'Italian',
-    color: Colors.purple,
+    color: Colors.green,
   ),
   Category(
     id: 'c2',
     title: 'Quick & Easy',
-    color: Colors.red,
+    color: Colors.amberAccent,
   ),
   Category(
     id: 'c3',
     title: 'Hamburgers',
-    color: Colors.orange,
+    color: Colors.brown,
   ),
   Category(
     id: 'c4',
     title: 'German',
-    color: Colors.amber,
+    color: Colors.orange,
   ),
   Category(
     id: 'c5',
     title: 'Light & Lovely',
-    color: Colors.blue,
+    color: Colors.purple,
   ),
   Category(
     id: 'c6',
     title: 'Exotic',
-    color: Colors.green,
+    color: Colors.teal,
   ),
   Category(
     id: 'c7',
     title: 'Breakfast',
-    color: Colors.lightBlue,
+    color: Colors.deepOrange,
   ),
   Category(
     id: 'c8',
     title: 'Asian',
-    color: Colors.lightGreen,
+    color: Colors.red,
   ),
   Category(
     id: 'c9',
     title: 'French',
-    color: Colors.pink,
+    color: Colors.blue,
   ),
   Category(
     id: 'c10',
     title: 'Summer',
-    color: Colors.teal,
+    color: Colors.amber,
   ),
 ];
 
