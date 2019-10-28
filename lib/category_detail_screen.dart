@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 import 'models/category.model.dart';
 
 class CategoryDetailsScreen extends StatelessWidget {
-  // final Category category;
-
-  // CategoryDetailsScreen(
-  //   this.category,
-  // );
+  static const routeName = '/category-detail';
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:course_007/category_detail_screen.dart';
 
 import 'models/category.model.dart';
 
@@ -11,7 +12,7 @@ class CategoryItem extends StatelessWidget {
 
   void _selectCategory(BuildContext context) {
     Navigator.of(context).pushNamed(
-      '/category-detail',
+      CategoryDetailsScreen.routeName,
       arguments: category,
     );
   }
