@@ -7,6 +7,11 @@ import '../dummy_data.dart';
 class MealScreen extends StatelessWidget {
   static const routeName = '/meal';
 
+  final Function toggleFavorite;
+  final Function isFavorite;
+
+  MealScreen(this.toggleFavorite, this.isFavorite);
+
   Widget buildSection(String head, List<String> list, Color color) {
     return Container(
       decoration: BoxDecoration(
@@ -55,6 +60,13 @@ class MealScreen extends StatelessWidget {
           meal.title,
           overflow: TextOverflow.fade,
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor:
+            isFavorite(meal) ? category.color : category.color.withAlpha(128),
+        foregroundColor: Colors.black,
+        child: isFavorite(meal) ? Icon(Icons.star) : Icon(Icons.star_border),
+        onPressed: () => toggleFavorite(meal),
       ),
       body: SingleChildScrollView(
         child: Column(
