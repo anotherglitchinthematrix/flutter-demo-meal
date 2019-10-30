@@ -1,4 +1,5 @@
 import 'package:course_007/screens/index.dart';
+import 'package:course_007/widgets/index.dart';
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -26,6 +27,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(_screens[_selectedPageIndex]['title']),
       ),
+      drawer: MainDrawer(),
       body: _screens[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Theme.of(context).primaryColor.withAlpha(128),

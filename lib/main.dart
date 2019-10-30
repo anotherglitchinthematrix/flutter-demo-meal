@@ -11,6 +11,9 @@ class App extends StatelessWidget {
       home: TabsScreen(),
       routes: {
         CategoryScreen.routeName: (context) => CategoryScreen(),
+        FavoritesScreen.routeName: (context) => FavoritesScreen(),
+        FiltersScreen.routeName: (context) => FiltersScreen(),
+        CategoriesScreen.routeName: (context) => CategoriesScreen(),
         MealScreen.routeName: (context) => MealScreen(),
       },
     );

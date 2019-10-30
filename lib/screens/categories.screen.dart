@@ -3,6 +3,8 @@ import 'package:course_007/widgets/index.dart';
 import 'package:course_007/dummy_data.dart';
 
 class CategoriesScreen extends StatelessWidget {
+  static const routeName = '/categories';
+
   @override
   Widget build(BuildContext context) {
     return GridView(
