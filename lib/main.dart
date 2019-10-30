@@ -8,7 +8,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Meal App',
-      home: CategoriesScreen(),
+      home: TabsScreen(),
       routes: {
         CategoryScreen.routeName: (context) => CategoryScreen(),
         MealScreen.routeName: (context) => MealScreen(),
