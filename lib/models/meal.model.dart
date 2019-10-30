@@ -42,4 +42,39 @@ class Meal {
     @required this.isVegan,
     @required this.isVegetarian,
   });
+
+  String get durationString {
+    bool flag = duration / 60 >= 1;
+    if (flag) {
+      return '${(duration / 60).toStringAsFixed(1)} hrs.';
+    } else {
+      return '$duration min.';
+    }
+  }
+
+  String get complexityString {
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simple';
+      case Complexity.Challenging:
+        return 'Challenging';
+      case Complexity.Hard:
+        return 'Hard';
+      default:
+        return 'Unknown Complexity';
+    }
+  }
+
+  String get affordabilityString {
+    switch (affordability) {
+      case Affordability.Pricey:
+        return 'Pricey';
+      case Affordability.Affordable:
+        return 'Affordable';
+      case Affordability.Luxurious:
+        return 'Expensive';
+      default:
+        return 'Unknown Affordability';
+    }
+  }
 }

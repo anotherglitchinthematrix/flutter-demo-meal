@@ -11,32 +11,6 @@ class MealItem extends StatelessWidget {
     Navigator.of(context).pushNamed(MealScreen.routeName, arguments: meal);
   }
 
-  String get complexityString {
-    switch (meal.complexity) {
-      case Complexity.Simple:
-        return 'Simple';
-      case Complexity.Challenging:
-        return 'Challenging';
-      case Complexity.Hard:
-        return 'Hard';
-      default:
-        return 'Unknown Complexity';
-    }
-  }
-
-  String get affordabilityString {
-    switch (meal.affordability) {
-      case Affordability.Pricey:
-        return 'Pricey';
-      case Affordability.Affordable:
-        return 'Affordable';
-      case Affordability.Luxurious:
-        return 'Expensive';
-      default:
-        return 'Unknown Affordability';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -55,6 +29,8 @@ class MealItem extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(8),
                     topRight: Radius.circular(8),
+                    bottomLeft: Radius.circular(8),
+                    bottomRight: Radius.circular(8),
                   ),
                   child: Image.network(
                     meal.imageURL,
@@ -98,21 +74,21 @@ class MealItem extends StatelessWidget {
                     children: <Widget>[
                       Icon(Icons.access_alarm),
                       SizedBox(width: 8),
-                      Text('${meal.duration} min.'),
+                      Text(meal.durationString),
                     ],
                   ),
                   Row(
                     children: <Widget>[
                       Icon(Icons.category),
                       SizedBox(width: 8),
-                      Text('$complexityString'),
+                      Text(meal.complexityString),
                     ],
                   ),
                   Row(
                     children: <Widget>[
                       Icon(Icons.attach_money),
                       SizedBox(width: 8),
-                      Text('$affordabilityString'),
+                      Text(meal.affordabilityString),
                     ],
                   ),
                 ],
