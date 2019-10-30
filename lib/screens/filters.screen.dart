@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 class FiltersScreen extends StatefulWidget {
   static const routeName = '/filters';
 
+  final Map<String, bool> filters;
+  final Function setFilters;
+
+  FiltersScreen(this.setFilters, this.filters);
+
   @override
   _FiltersScreenState createState() => _FiltersScreenState();
 }
@@ -13,6 +18,16 @@ class _FiltersScreenState extends State<FiltersScreen> {
   bool _vegetarian = false;
   bool _vegan = false;
   bool _lactoseFree = false;
+
+  @override
+  void initState() {
+    _glutenFree = widget.filters['gluten'];
+    _vegetarian = widget.filters['vegetarian'];
+    _vegan = widget.filters['vegan'];
+    _lactoseFree = widget.filters['lactose'];
+
+    super.initState();
+  }
 
   Widget buildSwitch({
     String title,
@@ -33,6 +48,12 @@ class _FiltersScreenState extends State<FiltersScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Filters'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.save),
+            onPressed: () => widget.setFilters(widget.filters),
+          ),
+        ],
       ),
       drawer: MainDrawer(),
       body: Column(
@@ -47,6 +68,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   handler: (change) {
                     setState(() {
                       _glutenFree = change;
+                      widget.filters['gluten'] = change;
                     });
                   },
                 ),
@@ -57,6 +79,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   handler: (change) {
                     setState(() {
                       _lactoseFree = change;
+                      widget.filters['lactose'] = change;
                     });
                   },
                 ),
@@ -67,6 +90,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   handler: (change) {
                     setState(() {
                       _vegetarian = change;
+                      widget.filters['vegetarian'] = change;
                     });
                   },
                 ),
@@ -77,6 +101,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   handler: (change) {
                     setState(() {
                       _vegan = change;
+                      widget.filters['vegan'] = change;
                     });
                   },
                 ),
